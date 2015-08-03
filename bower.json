@@ -5,7 +5,7 @@
   "homepage": "https://github.com/AudaxHealthInc/FileSaver.js",
   "authors": [
     "Eli Grey (http://eligrey.com)",
-    "Brian Chen (https://github.com/ChenWenBrian)"
+    "Brian Chen (https://github.com/ChenWenBrian)",
     "Scott Heath, with Rally Health (http://www.rallyhealth.com)"
   ],
   "description": "A saveAs() FileSaver implementation, with full browser support",
