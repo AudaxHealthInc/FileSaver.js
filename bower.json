@@ -1,0 +1,26 @@
+{
+  "name": "rally-file-saver",
+  "main": "FileSaver.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/AudaxHealthInc/FileSaver.js",
+  "authors": [
+    "Eli Grey (http://eligrey.com)",
+    "Brian Chen (https://github.com/ChenWenBrian)"
+    "Scott Heath, with Rally Health (http://www.rallyhealth.com)"
+  ],
+  "description": "A saveAs() FileSaver implementation, with full browser support",
+  "keywords": [
+    "File",
+    "FileSaver",
+    "saveAs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "demo"
+  ]
+}
