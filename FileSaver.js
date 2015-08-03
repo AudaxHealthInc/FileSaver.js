@@ -2,7 +2,12 @@
  *  A saveAs() & saveTextAs() FileSaver implementation.
  *  2014-06-24
  *
- *  Modify by Brian Chen
+ *  Modified by Scott Heath, with Rally Health
+ *  saveTextAs() function now replaces spaces and line breaks with
+ *  respective HTML tags in order to fix text file rendering bugs
+ *  in IE8 on WinXP installs and Win7 installs that don't have .NET 3+ framework
+ *
+ *  Forked from https://github.com/ChenWenBrian/FileSaver.js
  *  Author: Eli Grey, http://eligrey.com
  *  License: X11/MIT
  *    See https://github.com/eligrey/FileSaver.js/blob/master/LICENSE.md
@@ -277,13 +282,21 @@ var saveTextAs = saveTextAs
             }
 
             var doc = saveTxtWindow.document;
-            doc.open('text/plain', 'replace');
+            doc.open('text/html', 'replace');
             doc.charset = charset;
             if (fileName.endsWithAny('.htm', '.html')) {
                 doc.close();
                 doc.body.innerHTML = '\r\n' + textContent + '\r\n';
             } else {
                 if (!fileName.endsWithAny('.txt')) fileName += '.txt';
+                // To fix rendering bugs, replace line breaks and spaces with respective HTML tags in the following browsers:
+                // WinXP IE8 ("Windows NT 5")
+                // Win7 IE8 ("Windows NT 6") if it doesn't have .NET service pack 3+ (".NET CLR 3")
+                if(navigator.userAgent.indexOf('Windows NT 5') > -1 ||
+                    (navigator.userAgent.indexOf('Windows NT 6') > -1 && navigator.userAgent.indexOf('.NET CLR 3') == -1)) {
+                    textContent = textContent.replace(/\r\n/g, '<br>');
+                    textContent = textContent.replace(/ /g, '&nbsp;');
+                }
                 doc.write(textContent);
                 doc.close();
             }
