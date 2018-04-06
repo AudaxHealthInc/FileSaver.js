@@ -1,0 +1,19 @@
+{
+  "name": "filesaver",
+  "version": "1.0.0",
+  "description": "FileSaver.js",
+  "main": "FileSaver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AudaxHealthInc/FileSaver.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AudaxHealthInc/FileSaver.js/issues"
+  },
+  "homepage": "https://github.com/AudaxHealthInc/FileSaver.js#readme"
+}
